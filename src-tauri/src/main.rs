@@ -3,7 +3,7 @@
 
 use serde::Serialize;
 
-use better_file_explorer::{get_elements, SystemElement};
+use better_file_explorer::file_paths::{get_elements, SystemElement};
 
 #[derive(Serialize)]
 struct Response {
