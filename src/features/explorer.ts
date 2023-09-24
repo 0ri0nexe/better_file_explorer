@@ -1,12 +1,9 @@
 import { invoke } from "@tauri-apps/api/tauri";
 
+import { getPath, setPath } from "../currentSettings";
+
 let selectedRow: number;
 let elements: Element[] = [];
-let currentPath = "F:/";
-
-export function getCurrentPath() {
-    return currentPath;
-}
 
 type SystemElement = {
     folder: boolean,
@@ -19,7 +16,7 @@ type Response = {
 
 export async function getElements() {
     let new_elements: Response = await invoke("get_elements_from_path", {
-        path: currentPath,
+        path: getPath(),
     });
     await replace_elements(elements, new_elements);
 }
@@ -29,13 +26,12 @@ function replace_elements(elements: Element[], new_elements: Response) {
     while (explorer?.hasChildNodes()) {
         explorer.firstChild?.remove();
     }
-    console.log(new_elements)
-    console.log(new_elements.element_list)
     elements.splice(0, elements.length)
+
+    selectedRow = -1
 
     for (let i = 0; i < new_elements.element_list.length; i++) {
         const element = new_elements.element_list[i];
-        console.log("tests sur", element.name);
         let new_element: HTMLButtonElement = document.createElement("button");
         new_element.className = "row";
         new_element.onclick = (_) => { onRowClicked(i) };
@@ -62,12 +58,10 @@ function replace_elements(elements: Element[], new_elements: Response) {
         let rows = document.getElementsByClassName("row")
         elements.push(rows[rows.length - 1]);
     }
-    console.log(elements)
 }
 
 function onRowClicked(i: number) {
-    console.log("clicked on", i);
-    if (selectedRow != undefined) {
+    if (selectedRow != undefined && selectedRow >= 0) {
         elements[selectedRow].className = "row";
     }
     selectedRow = i;
@@ -75,6 +69,6 @@ function onRowClicked(i: number) {
 }
 
 async function onDoubleClick(i: number) {
-    currentPath += elements[i].textContent + "/";
+    setPath(getPath() + elements[i].textContent + "/");
     getElements();
 }

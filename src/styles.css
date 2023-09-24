@@ -12,6 +12,16 @@ html {
   background-color: rgb(5, 5, 54);
 }
 
+header {
+  border: 5px solid rgb(176, 109, 15);
+  border-radius: 5px;
+  color: #d6d8d6;
+
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+}
+
 .container {
   color: #d6d8d6;
   border: 5px solid rgb(34, 34, 255);
