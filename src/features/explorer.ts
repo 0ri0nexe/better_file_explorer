@@ -1,6 +1,7 @@
 import { invoke } from "@tauri-apps/api/tauri";
 
 import { getPath, setPath } from "../currentSettings";
+import { clean } from "../utils";
 
 let selectedRow: number;
 let elements: Element[] = [];
@@ -23,12 +24,10 @@ export async function getElements() {
 
 function replace_elements(elements: Element[], new_elements: Response) {
     let explorer = document.getElementById("explorer");
-    while (explorer?.hasChildNodes()) {
-        explorer.firstChild?.remove();
-    }
-    elements.splice(0, elements.length)
+    clean(explorer!);
+    elements.splice(0, elements.length);
 
-    selectedRow = -1
+    selectedRow = -1;
 
     for (let i = 0; i < new_elements.element_list.length; i++) {
         const element = new_elements.element_list[i];
