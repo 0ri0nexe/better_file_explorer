@@ -38,6 +38,19 @@ p {
   margin: 0;
 }
 
+.middle-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid rgb(255, 38, 34);
+}
+
 .container {
   color: #d6d8d6;
   border: 5px solid rgb(34, 34, 255);
@@ -46,15 +59,16 @@ p {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  width: 100%;
 }
 
 .icon {
   position: absolute;
   display: inline;
-  height: inherit;
   width: auto;
+  height: inherit;
   left: 15px;
-  padding-bottom: 2px;
+  bottom: -3px;
 }
 
 .row {
