@@ -2,6 +2,7 @@
 
 import { getPreviousPath, showPath } from "./features/historic";
 import { getElements } from "./features/explorer";
+import { showSidebar } from "./features/sidebar";
 
 document.addEventListener("keyup", async () => {
   getPreviousPath();
@@ -10,5 +11,6 @@ document.addEventListener("keyup", async () => {
 
 window.addEventListener("DOMContentLoaded", () => {
   getElements();
+  showSidebar();
   showPath();
 });

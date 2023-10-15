@@ -7,7 +7,6 @@
   color: #0f0f0f;
   --global-background-color: rgb(5, 5, 54);
   background-color: var(--global-background-color);
-
 }
 
 html {
@@ -26,7 +25,8 @@ html {
   max-height: 25px;
 }
 
-.directory {
+.directory,
+.sidebar-directory {
   color: #d6d8d6;
   background-color: var(--global-background-color);
   border: 3px solid rgb(34, 34, 255);
@@ -45,11 +45,15 @@ p {
   height: 100%;
 }
 
-.sidebar {
+#sidebar {
   display: flex;
   flex-direction: column;
   border: 5px solid rgb(255, 38, 34);
   color: aliceblue;
+}
+
+.sidebar-directory {
+  display: block;
 }
 
 .container {
@@ -97,6 +101,7 @@ p {
 }
 
 .directory:hover,
+.sidebar-directory:hover,
 .row:hover,
 .selected {
   background-color: rgb(18, 18, 142);

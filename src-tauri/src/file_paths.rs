@@ -1,6 +1,7 @@
 use std::fs;
 // use std::path::Path;
 use serde;
+use std::io::Error;
 
 #[derive(serde::Serialize)]
 pub struct SystemElement {
@@ -8,9 +9,8 @@ pub struct SystemElement {
     pub name: String,
 }
 
-pub fn get_elements(path: &str) -> Result<Vec<SystemElement>, &str> {
-    let result: Vec<SystemElement> = fs::read_dir(path)
-        .unwrap()
+pub fn get_elements(path: &str) -> Result<Vec<SystemElement>, Error> {
+    let result: Vec<SystemElement> = fs::read_dir(path)?
         .map(|file| {
             let file = file.unwrap();
             SystemElement {

@@ -1,5 +1,6 @@
 // TODO : setting a json file with these infos ???
 let currentPath = "F:/";
+let commonPaths = ["C:/", "D:/", "F:/", "F:/programmation/"]
 
 import { showPath } from "./features/historic";
 import { getElements } from "./features/explorer";
@@ -10,7 +11,7 @@ export function getPath(): string {
 
 export function setPath(newPath: string) {
     if (newPath.length < 3) {
-        newPath = "F:/"
+        newPath = "C:/";
     }
     currentPath = newPath;
     getElements();
@@ -20,4 +21,8 @@ export function setPath(newPath: string) {
 export function setAndReturnPath(newPath: string) {
     setPath(newPath);
     return newPath;
+}
+
+export function getCommonPaths() {
+    return commonPaths;
 }
