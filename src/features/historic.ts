@@ -28,19 +28,19 @@ export function showPath() {
     clean(historicBar!);
     let toSet = parsePath(0);
     for (let i = 0; i < toSet.length; i++) {
+
+        if (i != 0) {
+            let separator = document.createElement("p");
+            separator.textContent = " → ";
+            historicBar!.appendChild(separator);
+        }
         let directory = toSet[i];
         let button = document.createElement("button");
-        button.className = "historic_directory";
+        button.className = "directory";
         button.onclick = () => { onClick(i) };
         button.textContent = directory;
         historicBar!.appendChild(button);
-
-        let separator = document.createElement("p");
-        separator.textContent = ">";
-        historicBar!.appendChild(separator);
     }
-
-
 }
 
 function onClick(x: number) {

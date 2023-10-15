@@ -26,7 +26,7 @@ html {
   max-height: 25px;
 }
 
-.historic_directory {
+.directory {
   color: #d6d8d6;
   background-color: var(--global-background-color);
   border: 3px solid rgb(34, 34, 255);
@@ -49,6 +49,7 @@ p {
   display: flex;
   flex-direction: column;
   border: 5px solid rgb(255, 38, 34);
+  color: aliceblue;
 }
 
 .container {
@@ -95,7 +96,7 @@ p {
   left: 20%;
 }
 
-.historic_directory:hover,
+.directory:hover,
 .row:hover,
 .selected {
   background-color: rgb(18, 18, 142);
