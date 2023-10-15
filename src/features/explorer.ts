@@ -9,6 +9,7 @@ let elements: Element[] = [];
 type SystemElement = {
     folder: boolean,
     name: String,
+    // permissions: String,
 };
 
 type Response = {
@@ -31,6 +32,7 @@ function replace_elements(elements: Element[], new_elements: Response) {
 
     for (let i = 0; i < new_elements.element_list.length; i++) {
         const element = new_elements.element_list[i];
+        // console.log(element.name, ":", element.permissions)
         let new_element: HTMLButtonElement = document.createElement("button");
         new_element.className = "row";
         new_element.onclick = (_) => { onRowClicked(i) };
