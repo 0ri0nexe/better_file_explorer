@@ -3,7 +3,7 @@
 
 use serde::Serialize;
 
-use better_file_explorer::file_paths::{get_elements, SystemElement};
+use better_file_explorer::file_handle::{get_elements, system_element::SystemElement};
 
 #[derive(Serialize)]
 struct Response {
@@ -12,6 +12,7 @@ struct Response {
 
 #[tauri::command]
 fn get_elements_from_path(path: &str) -> Response {
+    println!("{}", path);
     Response {
         element_list: get_elements(path).unwrap(),
     }
