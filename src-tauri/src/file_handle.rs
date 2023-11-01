@@ -1,5 +1,3 @@
-// voir à https://github.com/spacedriveapp/spacedrive/blob/f352a28dc883b20332138e5201580987119e181d/core/src/location/indexer/rules/seed.rs#L72
-// pour les dossiers protégés
 mod rules;
 pub mod system_element;
 
