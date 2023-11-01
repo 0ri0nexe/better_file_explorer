@@ -1,6 +1,6 @@
 use serde;
 
-use super::rules::{self, is_in_rules};
+use super::rules::is_in_rules;
 
 #[derive(serde::Serialize)]
 pub struct SystemElement {

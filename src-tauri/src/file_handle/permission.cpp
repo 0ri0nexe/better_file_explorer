@@ -31,5 +31,6 @@ extern "C"
         {
             return 1;
         }
+        return 1;
     }
 }

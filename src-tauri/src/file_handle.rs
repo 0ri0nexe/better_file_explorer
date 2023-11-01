@@ -4,7 +4,6 @@ pub mod system_element;
 use std::fs;
 use std::io::Error;
 
-use rules::is_in_rules;
 use system_element::SystemElement;
 
 pub fn get_elements(path: &str) -> Result<Vec<SystemElement>, Error> {
