@@ -12,7 +12,6 @@ struct Response {
 
 #[tauri::command]
 fn get_elements_from_path(path: &str) -> Response {
-    println!("{}", path);
     Response {
         element_list: get_elements(path).unwrap(),
     }
