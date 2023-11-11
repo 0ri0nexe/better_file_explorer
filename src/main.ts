@@ -6,11 +6,15 @@ import { showSidebar } from "./features/sidebar";
 
 document.addEventListener("keyup", async () => {
   getPreviousPath();
-  console.log("fait");
 });
 
 window.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("explorer")!.style.height = (window.innerHeight - document.getElementById("historic_bar")!.offsetHeight - 15).toString() + "px";
   getElements();
   showSidebar();
   showPath();
 });
+
+window.addEventListener("resize", () => {
+  document.getElementById("explorer")!.style.height = (window.innerHeight - document.getElementById("historic_bar")!.offsetHeight - 15).toString() + "px";
+})

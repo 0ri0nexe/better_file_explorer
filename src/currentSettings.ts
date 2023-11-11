@@ -2,6 +2,12 @@
 let currentPath = "F:/";
 let commonPaths = ["C:/", "D:/", "F:/", "F:/programmation/"]
 
+export enum Views {
+    List,
+    Block,
+}
+let currentView = Views.Block;
+
 import { showPath } from "./features/historic";
 import { getElements } from "./features/explorer";
 
@@ -25,4 +31,8 @@ export function setAndReturnPath(newPath: string) {
 
 export function getCommonPaths() {
     return commonPaths;
+}
+
+export function getCurrentView() {
+    return currentView;
 }

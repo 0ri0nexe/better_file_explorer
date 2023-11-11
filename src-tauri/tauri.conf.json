@@ -28,7 +28,21 @@
         "icons/128x128@2x.png",
         "icons/icon.icns",
         "icons/icon.ico"
-      ]
+      ],
+      "windows": {
+        "allowDowngrades": true,
+        "certificateThumbprint": null,
+        "digestAlgorithm": null,
+        "nsis": null,
+        "timestampUrl": null,
+        "tsp": false,
+        "webviewFixedRuntimePath": null,
+        "webviewInstallMode": {
+          "silent": true,
+          "type": "downloadBootstrapper"
+        },
+        "wix": null
+      }
     },
     "security": {
       "csp": null
@@ -39,7 +53,9 @@
         "resizable": true,
         "title": "better_file_explorer",
         "width": 800,
-        "height": 600
+        "height": 600,
+        "minHeight": 600,
+        "minWidth": 700
       }
     ]
   }
